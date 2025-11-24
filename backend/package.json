@@ -1,0 +1,48 @@
+{
+  "name": "tasknest-backend",
+  "version": "1.0.0",
+  "description": "TaskNest Backend API - A comprehensive task management system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "dev:db": "node scripts/start-dev-db.js",
+    "dev:all": "concurrently \"npm run dev:db\" \"npm run dev\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "db:setup": "node scripts/setup-mongodb.js",
+    "db:seed": "node utils/seedDatabase.js",
+    "test:email": "node scripts/test-email.js",
+    "check:tasks": "node scripts/check-due-tasks.js"
+  },
+  "keywords": [
+    "task-management",
+    "api",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "TaskNest Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.1",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.16",
+    "react-router-bootstrap": "^0.26.3",
+    "react-router-dom": "^7.9.4"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.2.3",
+    "nodemon": "^3.1.10"
+  }
+}
